@@ -7,23 +7,35 @@ public class MouseResolver : MonoBehaviour
     public event Action<ISelectable> OnHoverEnter;
     public event Action<ISelectable> OnHoverExit;
     public event Action<ISelectable> OnSelect;
+    public event Action<ISelectable> OnDeselect;
 
+    private ISelectable m_lasthovered;
+    private ISelectable m_lastSelected;
     void Update()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-        /*if (Physics.Raycast(ray, out RaycastHit hit))
+        if (Physics.Raycast(ray, out RaycastHit hit))
         {
-            if (hit.transform.TryGetComponent(out ISelectable selectable))
+            ISelectable selectable = hit.transform.GetComponentInParent<ISelectable>();
+            OnHoverEnter?.Invoke(selectable);
+
+            if (selectable != m_lasthovered)
             {
-                OnHoverEnter?.Invoke(selectable);
+                OnHoverExit?.Invoke(m_lasthovered);
+                 m_lasthovered = selectable;
+            }
+
+            if (Input.GetMouseButtonDown(0) && selectable != m_lastSelected)
+            {
+                OnDeselect?.Invoke(m_lastSelected);
+                OnSelect?.Invoke(selectable);
+                m_lastSelected = selectable;
             }
         }
         else
         {
-      
-        }*/
-
-        ISelectable selectable = GetComponentInParent<ISelectable>();
+            OnHoverExit?.Invoke(m_lasthovered);
+        }        
     }
+
 }
