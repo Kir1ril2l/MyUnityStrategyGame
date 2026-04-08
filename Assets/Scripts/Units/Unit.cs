@@ -11,8 +11,8 @@ public class Unit : MonoBehaviour, ISelectable
     {
         m_mouseResolver.OnHoverEnter += OnHoverEnter;
         m_mouseResolver.OnHoverExit += OnHoverExit;   
-        m_mouseResolver.OnSelect += OnSelect;
-        m_mouseResolver.OnDeselect += OnDeselect;
+        m_mouseResolver.OnHoverEnter += OnSelect;
+        m_mouseResolver.OnHoverExit += OnDeselect;
     }
 
     public void OnHoverEnter(ISelectable selectable)

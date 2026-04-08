@@ -27,8 +27,8 @@ public class MouseResolver : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0) && selectable != m_lastSelected)
             {
-                OnDeselect?.Invoke(m_lastSelected);
-                OnSelect?.Invoke(selectable);
+                OnHoverExit?.Invoke(m_lastSelected);
+                OnHoverEnter?.Invoke(selectable);
                 m_lastSelected = selectable;
             }
         }
