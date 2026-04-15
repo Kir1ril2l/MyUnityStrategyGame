@@ -7,6 +7,19 @@ public class SelectedUnitPanelController : MonoBehaviour
     [SerializeField] private TMP_Text m_unitNameText;
     [SerializeField] private GameObject m_selectedUnitPanel;
 
+    [Header("Slide Anim Pos")]
+
+    [SerializeField] private Vector2 m_shownPosition;
+    [SerializeField] private Vector2 m_hiddenPosition;
+    [SerializeField] private float m_animDuration = 0.5f;
+
+    private RectTransform m_rectTransform;
+
+    private void Awake()
+    {
+        m_rectTransform = m_selectedUnitPanel.GetComponent<RectTransform>();
+    }
+
     private void OnEnable()
     {
         m_mouseResolver.OnHoverEnter += ShowPanel;
@@ -17,10 +30,12 @@ public class SelectedUnitPanelController : MonoBehaviour
     {
         MonoBehaviour s = selectable as MonoBehaviour;
         m_unitNameText.text = s.gameObject.name;
-        m_selectedUnitPanel.SetActive(true);
+        SlideInOut.SlideIn(m_rectTransform, m_shownPosition, m_animDuration);
+        //m_selectedUnitPanel.SetActive(true);
     }
     private void HidePanel(ISelectable selectable)
     {
-        m_selectedUnitPanel.SetActive(false);
+        SlideInOut.SlideOut(m_rectTransform, m_hiddenPosition, m_animDuration);
+        //m_selectedUnitPanel.SetActive(false);
     }
 }

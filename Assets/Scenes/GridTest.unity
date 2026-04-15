@@ -581,9 +581,9 @@ RectTransform:
   - {fileID: 785613808}
   m_Father: {fileID: 453076862}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -271}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 40}
   m_SizeDelta: {x: 360, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &750165054
@@ -601,6 +601,9 @@ MonoBehaviour:
   m_mouseResolver: {fileID: 414773285}
   m_unitNameText: {fileID: 1472531438}
   m_selectedUnitPanel: {fileID: 785613807}
+  m_shownPosition: {x: 0, y: 0}
+  m_hiddenPosition: {x: 0, y: -100}
+  m_animDuration: 0.5
 --- !u!1 &785613807
 GameObject:
   m_ObjectHideFlags: 0
@@ -634,9 +637,9 @@ RectTransform:
   - {fileID: 1472531437}
   m_Father: {fileID: 750165053}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 40}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 360, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &785613809
@@ -1069,6 +1072,14 @@ PrefabInstance:
     - target: {fileID: 7472714212679508294, guid: 8b1940c1706e6994981252a33e1e3387, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8920921132867964884, guid: 8b1940c1706e6994981252a33e1e3387, type: 3}
+      propertyPath: m_unitNameText
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8920921132867964884, guid: 8b1940c1706e6994981252a33e1e3387, type: 3}
+      propertyPath: m_mouseResolver
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8534290057067615364}
   - component: {fileID: 6455520267766799198}
   - component: {fileID: 1831049152721050589}
+  - component: {fileID: 8920921132867964884}
   m_Layer: 0
   m_Name: Unit
   m_TagString: Untagged
@@ -88,6 +89,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Unit
   m_unitSelection: {fileID: 6455520267766799198}
   m_mouseResolver: {fileID: 0}
+  m_unitNameController: {fileID: 8920921132867964884}
+--- !u!114 &8920921132867964884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657719822897632474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3252d81529fa724396019146adaaf45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HoverUnitNameController
+  m_mouseResolver: {fileID: 0}
+  m_unitNameText: {fileID: 3829112384655248697}
+  m_selectedUnitHover: {fileID: 0}
+  m_parentUnit: {fileID: 0}
 --- !u!1 &1923925022299889856
 GameObject:
   m_ObjectHideFlags: 0

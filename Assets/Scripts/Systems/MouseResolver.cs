@@ -22,7 +22,7 @@ public class MouseResolver : MonoBehaviour
             if (selectable != m_lasthovered)
             {
                 OnHoverExit?.Invoke(m_lasthovered);
-                 m_lasthovered = selectable;
+                m_lasthovered = selectable;
             }
 
             if (Input.GetMouseButtonDown(0) && selectable != m_lastSelected)
